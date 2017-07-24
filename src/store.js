@@ -1,21 +1,28 @@
-import Config from './config/config';
+import { createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import { logger, router, reduxRouterMiddleware } from './middleware'
 import createLogger from 'redux-logger';
-import thunk from 'redux-thunk';
-import reducer from './reducers/index';
-import { createStore, applyMiddleware } from 'redux';
+import rootReducer from './reducers'
 
-// 异步action中间件
-const middleware = [ thunk ];
+const nextReducer = require('./reducers')
+export default function configure(initialState) {
+  const create = window.devToolsExtension ?
+    window.devToolsExtension()(createStore) :
+    createStore
 
-// 判断环境是否是开发环境
-const node_env = process.env.NODE_ENV;
-if(node_env === 'dev') {
-	middleware.push(createLogger());
+  const createStoreWithMiddleware = applyMiddleware(
+    thunkMiddleware,
+		reduxRouterMiddleware,
+		createLogger(),
+		logger,
+  )(create)
+
+  const store = createStoreWithMiddleware(rootReducer, initialState)
+
+  if (module.hot) {
+    module.hot.accept('./reducers', () => {
+      store.replaceReducer(nextReducer)
+    })
+  }
+  return store
 }
-
-const store = createStore(
-	reducer,
-	applyMiddleware(...middleware)
-);
-
-export default (store);

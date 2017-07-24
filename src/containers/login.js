@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { loginFetch } from '../actions/login/login.js'
-import { browserHistory , Link} from 'react-router'
+import { browserHistory , hashHistory, Link} from 'react-router'
 import $ from 'jquery'
 
 
@@ -25,7 +25,7 @@ class Login extends Component {
     const page = this.props.params.page
 
     dispatch(loginFetch(this.refs.username.value,this.refs.password.value,()=>{
-      browserHistory.push(page ? page.replace(/-/g,'/') : '/')
+      hashHistory.push(page ? page.replace(/-/g,'/') : '/')
     }))
   }
 
