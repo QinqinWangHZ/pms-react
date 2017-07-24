@@ -15,6 +15,7 @@ export default function configure(initialState) {
 		reduxRouterMiddleware,
 		createLogger(),
 		logger,
+    router
   )(create)
 
   const store = createStoreWithMiddleware(rootReducer, initialState)
