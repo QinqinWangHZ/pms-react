@@ -8,7 +8,7 @@ import store from './store';
 import routers from './routers';
 
 store.dispatch({
-    type:'FETCH_USER',
+  type:'FETCH_USER',
 });
 
 ReactDOM.render(

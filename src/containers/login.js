@@ -12,6 +12,7 @@ class Login extends Component {
 
   login(e){
     const { dispatch } = this.props
+
     // validate
     if(  !this.refs.username.value ){
       alert('请输入用户名')
@@ -21,11 +22,11 @@ class Login extends Component {
       return
     }
     
-    // const page = this.props.params.page
-    // dispatch(loginFetch(this.refs.username.value,this.refs.password.value,()=>{
-    //   browserHistory.push(page ? page.replace(/-/g,'/') : '/')
-    // }))
-     dispatch(loginFetch(this.refs.username.value,this.refs.password.value))
+    const page = this.props.params.page
+
+    dispatch(loginFetch(this.refs.username.value,this.refs.password.value,()=>{
+      browserHistory.push(page ? page.replace(/-/g,'/') : '/')
+    }))
   }
 
   render() {

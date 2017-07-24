@@ -9,7 +9,7 @@ export const LOGIN_ERROR = 'LOGIN_ERROR'
 
 export function loginFetch(username,password,redirect){
   // fetch login
-  return dispatch => { 
+  return dispatch => {
     fetch(Config.loginUrl + `?username=${username}&password=${password}&grant_type=password`)
     .then((response) => response.json() )
     .then((data) => {
@@ -21,8 +21,10 @@ export function loginFetch(username,password,redirect){
         Storage.put('custId',data.custId)
         Storage.put('token',data.access_token)
         dispatch(login(data.access_token))
-       // 页面跳转
-       if (Redirect) redirect()
+        // 页面跳转
+        if (redirect) {
+          redirect()
+        }
         console.log(data);
       }else{
        dispatch(alert('帐号或密码错误'))
@@ -45,9 +47,6 @@ export const loginError = (message) => {
 }
 
 export const login = (token) => {
-  // alert('login');
-  // console.log(Redirect)
-  // BrowserRouter.push('/login')
   return {
     type: LOGIN,
     token
