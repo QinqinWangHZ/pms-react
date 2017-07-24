@@ -8,7 +8,7 @@ import { createStore, applyMiddleware } from 'redux';
 const middleware = [ thunk ];
 
 // 判断环境是否是开发环境
-const node_env = Config.environment[Config.scheme_env];
+const node_env = process.env.NODE_ENV;
 if(node_env === 'dev') {
 	middleware.push(createLogger());
 }
