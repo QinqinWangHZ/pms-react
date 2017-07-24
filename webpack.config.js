@@ -92,14 +92,6 @@ module.exports = {
                 test: /\.(png|jpg|jepg|gif)$/,
                 loader: 'url-loader?limit=8192'
             }
-
         ]
     },
-    // 转化成es5的语法
-    babel: {
-        presets: ["es2015", "react","stage-0"],
-        plugins:['transform-runtime',
-          ["import", { libraryName: "antd", style: "css" }] // `style: true` 会加载 less 文件
-        ]
-    }
 }
