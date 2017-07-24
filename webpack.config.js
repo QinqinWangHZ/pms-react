@@ -57,11 +57,16 @@ module.exports = {
         headers: {
             'Access-Control-Allow-Origin': '*'
         },
-        proxy: {
-            '/api/*': {
-                target: 'localhost:8080',
-                secure: false
-            }
+        contentBase: './src',
+        "proxy": {
+          "/api": {
+            "target": "http://dsppre.adbaitai.com",
+            "changeOrigin": true
+          },
+          "/mock": {
+            "target": "https://www.easy-mock.com",
+            "changeOrigin": true
+          }
         }
     },
     module: {
@@ -83,6 +88,11 @@ module.exports = {
                 test: /\.json$/,
                 loader: 'json'
             },
+            {
+                test: /\.(png|jpg|jepg|gif)$/,
+                loader: 'url-loader?limit=8192'
+            }
+
         ]
     },
     // 转化成es5的语法

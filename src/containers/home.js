@@ -5,12 +5,12 @@ import { connect } from 'react-redux'
 
  class Home extends Component {
     constructor(props) {
-       super(props);
+      super(props);
    }
 
   render() {
-    let user = this.props.home.user.name;
-    let age = this.props.home.user.age;
+    // let user = this.props.home.user.name;
+    // let age = this.props.home.user.age;
     return (
       <div>
         <div className="home">
