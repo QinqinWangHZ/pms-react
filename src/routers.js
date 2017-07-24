@@ -9,8 +9,10 @@ const TestCenter = (location, cb) => {
     },'repos')
 }
 
-export default (
+const routes = (
     <Route path="/" component={Home}>
       <Route path="repos" getComponent={TestCenter}/>
     </Route>
 )
+
+export default routes;
