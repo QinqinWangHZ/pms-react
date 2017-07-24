@@ -9,7 +9,6 @@ var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 // webpack扩展功能
 var alias = require('./bin/alias.js');
-var getEntry = require('./bin/getEntry.js');
 
 module.exports = {
     entry: {
@@ -75,11 +74,9 @@ module.exports = {
             {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap')
-                // loader:['style-loader', 'css-loader?sourceMap']
             },
             {
                 test: /\.scss$/,
-                // loader: ['style-loader','css-loader?sourceMap','sass-loader']
                 loader: ExtractTextPlugin.extract('style-loader','css-loader?sourceMap!sass-loader')
             },
             {
