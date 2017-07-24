@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { loginFetch } from '../actions/login/login.js'
-import { browserHistory , Link} from 'react-router'
+import { browserHistory , hashHistory, Link} from 'react-router'
 import $ from 'jquery'
 
 
@@ -12,6 +12,7 @@ class Login extends Component {
 
   login(e){
     const { dispatch } = this.props
+
     // validate
     if(  !this.refs.username.value ){
       alert('请输入用户名')
@@ -21,11 +22,11 @@ class Login extends Component {
       return
     }
     
-    // const page = this.props.params.page
-    // dispatch(loginFetch(this.refs.username.value,this.refs.password.value,()=>{
-    //   browserHistory.push(page ? page.replace(/-/g,'/') : '/')
-    // }))
-     dispatch(loginFetch(this.refs.username.value,this.refs.password.value))
+    const page = this.props.params.page
+
+    dispatch(loginFetch(this.refs.username.value,this.refs.password.value,()=>{
+      hashHistory.push(page ? page.replace(/-/g,'/') : '/')
+    }))
   }
 
   render() {

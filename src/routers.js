@@ -9,9 +9,25 @@ const TestCenter = (location, cb) => {
     },'repos')
 }
 
+// 登录
+const login = (location, cb) => {
+    require.ensure([], require => {
+      cb(null, require('./containers/login.js').default)
+    },'login')
+}
+
+// 图表
+const PieReact = (location, cb) => {
+    require.ensure([], require => {
+      cb(null, require('./containers/echartsTest.js').default)
+    },'echartsTest')
+}
+
 const routes = (
     <Route path="/" component={Home}>
       <Route path="repos" getComponent={TestCenter}/>
+      <Route path="login" getComponent={login}/>
+      <Route path="PieReact" getComponent={PieReact}/>
     </Route>
 )
 

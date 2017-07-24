@@ -50,14 +50,13 @@ module.exports = {
     ],
     devtool:'eval-source-map',
     devServer: {
-        historyApiFallback: true,
+        historyApiFallback: true, // 在开发单页应用时非常有用，它依赖于HTML5 history API，如果设置为true，所有的跳转将指向index.html
         hot: true,
-        inline: true,
+        inline: true, // 设置为true，当源文件改变时会自动刷新页面
         progress: true,
         headers: {
             'Access-Control-Allow-Origin': '*'
         },
-        contentBase: './src',
         "proxy": {
           "/api": {
             "target": "http://dsppre.adbaitai.com",
@@ -66,9 +65,21 @@ module.exports = {
           "/mock": {
             "target": "https://www.easy-mock.com",
             "changeOrigin": true
-          }
+          },
+          "/mockjs": {
+            "target": "http://rapapi.org",
+            "changeOrigin": true
+          },
+            '/sapi/*': {
+              changeOrigin: true,
+              target: 'http://newshop.m.beta.yinyuetai.com/',
+              host: 'yinyuetai.com'
+            },
         }
     },
+    postcss: [
+        require('autoprefixer')
+    ],
     module: {
         loaders: [
             {

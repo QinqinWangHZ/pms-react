@@ -3,7 +3,7 @@ import './stylesheet/index.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { syncHistoryWithStore } from 'react-router-redux'
-import { Router, hashHistory } from 'react-router';
+import { Router, hashHistory, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 
 // store设置
@@ -16,13 +16,14 @@ history.listen(function (location) { return location })
 // 路由
 import routers from './routers';
 
+
 // store.dispatch({
-//     type:'FETCH_USER',
+//   type:'FETCH_USER',
 // });
 
 ReactDOM.render(
 	<Provider store={store}>
-    <Router history={history}>
+    <Router history={hashHistory}>
 		  { routers }
     </Router>
 	</Provider>,
