@@ -22,10 +22,13 @@ const PieReact = (location, cb) => {
       cb(null, require('./containers/echartsTest.js').default)
     },'echartsTest')
 }
-export default (
+
+const routes = (
     <Route path="/" component={Home}>
       <Route path="repos" getComponent={TestCenter}/>
       <Route path="login" getComponent={login}/>
       <Route path="PieReact" getComponent={PieReact}/>
     </Route>
 )
+
+export default routes;
