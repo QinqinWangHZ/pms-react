@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { loginFetch } from '../actions/login/login.js'
-import { browserHistory , hashHistory, Link} from 'react-router'
+import { hashHistory, Link} from 'react-router'
 import $ from 'jquery'
 
 
