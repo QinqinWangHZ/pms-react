@@ -1,17 +1,17 @@
 import React from 'react';
-import { syncHistoryWithStore } from 'react-router-redux';
-
 import ReactDOM from 'react-dom';
-
+import { syncHistoryWithStore } from 'react-router-redux';
 import { Router, hashHistory } from 'react-router';
 import { Provider } from 'react-redux';
+
 import './stylesheet/index.scss';
-// store设置
-import configure from './store';
-import myhistory from './history';
 // 路由
 import routers from './routers';
 
+
+// store设置
+import configure from './store';
+import myhistory from './history';
 const store = configure();
 const history = syncHistoryWithStore(myhistory, store);
 history.listen((location) => { return location; });
@@ -23,7 +23,7 @@ history.listen((location) => { return location; });
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>
+    <Router history={history}>
       { routers }
     </Router>
   </Provider>,
