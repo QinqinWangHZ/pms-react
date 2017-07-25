@@ -27,7 +27,7 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.9.0",
-    "babel-runtime": "^5.8.34",
+    "babel-runtime": "^6.23.0",
     "clean-webpack-plugin": "^0.1.13",
     "copy-webpack-plugin": "^4.0.0",
     "css-loader": "^0.25.0",
