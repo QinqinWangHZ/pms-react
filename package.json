@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.config.js --progress --profile --colors --hot --inline",
     "build": "NODE_ENV=production webpack --progress --profile --colors --optimize-minimize",
-    "lint": "eslint --ext .js src test"
+    "lint": "eslint --ext .js src"
   },
   "author": "",
   "license": "ISC",
@@ -33,6 +33,7 @@
     "css-loader": "^0.25.0",
     "eslint": "^4.3.0",
     "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
@@ -63,6 +64,7 @@
     "es6-promise": "^4.0.5",
     "fetch-polyfill": "^0.8.2",
     "isomorphic-fetch": "^2.2.1",
+    "jquery": "^3.2.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-mixin": "^3.0.5",

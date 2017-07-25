@@ -1,7 +1,7 @@
+import React, { Component } from 'react';
+import { Rate, Switch, Icon, DatePicker } from 'antd';
+// const { MonthPicker, RangePicker } = DatePicker;
 import '../../src/stylesheet/list.scss';
-import React, {Component, PropTypes} from 'react';
-import { Rate,Switch,Icon,DatePicker } from 'antd';
-const { MonthPicker, RangePicker } = DatePicker;
 
 function onChange(date, dateString) {
   console.log(date, dateString);
@@ -19,7 +19,7 @@ export default  class Test extends Component {
     const { value } = this.state;
     return (
       <div className="tt">
-      <div className="list">我是list</div>
+        <div className="list">我是list</div>
         <span>
           <DatePicker onChange={onChange} />
           <Switch checkedChildren="开" unCheckedChildren="关" />

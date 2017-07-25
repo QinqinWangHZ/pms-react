@@ -21,6 +21,7 @@ history.listen((location) => { return location; });
 //   type:'FETCH_USER',
 // });
 
+
 ReactDOM.render(
   <Provider store={store}>
     <Router history={hashHistory}>
