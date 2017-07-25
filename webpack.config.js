@@ -23,6 +23,9 @@ module.exports = {
     alias: alias,
     extensions: ['', '.js', '.jsx', '.less', '.scss', '.css'],
   },
+  externals: {
+    jquery: 'window.jQuery'
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -105,4 +108,3 @@ module.exports = {
     ],
   },
 };
-
