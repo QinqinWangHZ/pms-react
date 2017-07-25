@@ -23,11 +23,19 @@ const PieReact = (location, cb) => {
     },'echartsTest')
 }
 
+// 测试
+const test = (location, cb) => {
+    require.ensure([], require => {
+      cb(null, require('./containers/test.js').default)
+    },'test')
+}
+
 const routes = (
     <Route path="/" component={Home}>
       <Route path="repos" getComponent={TestCenter}/>
       <Route path="login" getComponent={login}/>
       <Route path="PieReact" getComponent={PieReact}/>
+      <Route path="test" getComponent={test}/>
     </Route>
 )
 

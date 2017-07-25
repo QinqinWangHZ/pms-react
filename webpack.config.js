@@ -70,11 +70,11 @@ module.exports = {
             "target": "http://rapapi.org",
             "changeOrigin": true
           },
-            '/sapi/*': {
-              changeOrigin: true,
-              target: 'http://newshop.m.beta.yinyuetai.com/',
-              host: 'yinyuetai.com'
-            },
+          '/sapi/*': {
+            "changeOrigin": true,
+            "target": 'http://newshop.m.beta.yinyuetai.com/',
+            "host": 'yinyuetai.com'
+          },
         }
     },
     postcss: [
@@ -101,7 +101,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|jepg|gif)$/,
-                loader: 'url-loader?limit=8192'
+                loader: 'url-loader?limit=8192&name=images/[name].[ext]'
             }
         ]
     },
