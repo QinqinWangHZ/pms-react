@@ -23,6 +23,9 @@ module.exports = {
     alias: alias,
     extensions: ['', '.js', '.jsx', '.less', '.scss', '.css'],
   },
+  externals: {
+    jquery: 'window.jQuery'
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
@@ -88,11 +91,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap'),
+        // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap'),
+        loader: 'style-loader!css-loader?sourceMap',
       },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!sass-loader'),
+        // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!sass-loader'),
+        loader: 'style-loader!css-loader?sourceMap!sass-loader',
       },
       {
         test: /\.json$/,
@@ -105,4 +110,3 @@ module.exports = {
     ],
   },
 };
-
