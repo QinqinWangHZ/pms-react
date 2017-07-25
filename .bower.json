@@ -1,0 +1,20 @@
+{
+  "name": "pms",
+  "description": "PC端项目脚手架",
+  "main": "index.js",
+  "authors": [
+    "xifeng.cao"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "1.10.2"
+  }
+}
