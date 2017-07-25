@@ -61,7 +61,7 @@
     "axios": "^0.15.2",
     "babel-polyfill": "^6.16.0",
     "echarts": "^3.6.2",
-    "es6-promise": "^4.0.5",
+    "es6-promise": "^4.1.1",
     "fetch-polyfill": "^0.8.2",
     "isomorphic-fetch": "^2.2.1",
     "jquery": "^3.2.1",
