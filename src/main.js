@@ -1,20 +1,20 @@
-import './stylesheet/index.scss';
-
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { syncHistoryWithStore } from 'react-router-redux'
-import { Router, hashHistory, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
 
+import ReactDOM from 'react-dom';
+
+import { Router, hashHistory } from 'react-router';
+import { Provider } from 'react-redux';
+import './stylesheet/index.scss';
 // store设置
 import configure from './store';
-const store = configure()
-import myhistory from './history'
-const history = syncHistoryWithStore(myhistory, store)
-history.listen(function (location) { return location })
-
+import myhistory from './history';
 // 路由
 import routers from './routers';
+
+const store = configure();
+const history = syncHistoryWithStore(myhistory, store);
+history.listen((location) => { return location; });
 
 
 // store.dispatch({
@@ -22,10 +22,10 @@ import routers from './routers';
 // });
 
 ReactDOM.render(
-	<Provider store={store}>
+  <Provider store={store}>
     <Router history={hashHistory}>
-		  { routers }
+      { routers }
     </Router>
-	</Provider>,
-	document.getElementById('app')
+  </Provider>,
+  document.getElementById('app')
 );

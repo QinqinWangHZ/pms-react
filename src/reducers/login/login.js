@@ -6,7 +6,9 @@ function login(state = '', action) {
   switch (action.type) {
     case LOGIN:
       // return action.token;
-      return 'name:siisis';
+      return Object.assign({}, state, {
+        token: 'jajjaj'
+      })
       break;
     default:
       return state;
