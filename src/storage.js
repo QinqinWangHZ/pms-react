@@ -4,18 +4,18 @@
 export default {
 
   put: function(key, value) {
-    window.localStorage.setItem(key, value)
+    window.localStorage.setItem(key, value);
   },
 
   get: function (key) {
-    return window.localStorage.getItem(key)
+    return window.localStorage.getItem(key);
   },
 
   remove: function (key) {
-    return window.localStorage.removeItem(key)
+    return window.localStorage.removeItem(key);
   },
 
   clear: function () {
-    window.localStorage.clear()
-  }
-}
+    window.localStorage.clear();
+  },
+};

@@ -1,53 +1,37 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+/*eslint-disable */
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
-class Counter extends Component {
-  constructor(props) {
-    super(props);
-    this.incrementAsync = this.incrementAsync.bind(this);
-    this.incrementIfOdd = this.incrementIfOdd.bind(this);
-  }
 
-  incrementIfOdd() {
-    if (this.props.value % 2 !== 0) {
-      this.props.onIncrement();
-    }
+const Counter = ({dispatch, children, test}) => {
+  console.log(test);
+  console.log(children);
+  const onIncrement = (test) => {
+    dispatch({
+      type: 'INCREMENT',
+      payload: {},
+    });
   }
-
-  incrementAsync() {
-    setTimeout(this.props.onIncrement, 1000)
-  }
-
-  render() {
-    const { value, onIncrement, onDecrement } = this.props
-    return (
-      <p>
-        Clicked: {value} times
-        {' '}
-        <button onClick={onIncrement}>
-          +
-        </button>
-        {' '}
-        <button onClick={onDecrement}>
-          -
-        </button>
-        {' '}
-        <button onClick={this.incrementIfOdd}>
-          Increment if odd
-        </button>
-        {' '}
-        <button onClick={this.incrementAsync}>
-          Increment async
-        </button>
-      </p>
-    )
-  }
+  return(
+    <div>
+      <span>点击{test}次</span>
+      <button onClick={onIncrement}>onIncrement</button>
+      <div>{children}</div>
+    </div>
+  )
 }
 
 Counter.propTypes = {
-  value: PropTypes.number.isRequired,
-  onIncrement: PropTypes.func.isRequired,
-  onDecrement: PropTypes.func.isRequired
-};
+  children: PropTypes.element.isRequired
+}
 
-export default Counter
+function mapStateToProps(state) {
+  console.log(state)
+  const { test } = state.test;
+  return {
+    test: test
+  }
+}
+
+export default connect(mapStateToProps)(Counter);

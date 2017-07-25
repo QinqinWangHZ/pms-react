@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux'
-import { LOGIN, LOGIN_ERROR } from '../../actions/login/login'
+import { combineReducers } from 'redux';
+import { LOGIN } from '../../actions/login/login';
 
 function login(state = '', action) {
   console.log(action.type);
@@ -7,16 +7,15 @@ function login(state = '', action) {
     case LOGIN:
       // return action.token;
       return Object.assign({}, state, {
-        token: 'jajjaj'
-      })
-      break;
+        token: 'jajjaj',
+      });
     default:
       return state;
   }
 }
 
 const todoApp = combineReducers({
-  login
-})
+  login,
+});
 
-export default todoApp
+export default todoApp;
