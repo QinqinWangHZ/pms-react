@@ -24,7 +24,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.less', '.scss', '.css'],
   },
   externals: {
-    jquery: 'window.jQuery'
+    jquery: 'window.jQuery',
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -93,6 +93,10 @@ module.exports = {
         test: /\.css$/,
         // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap'),
         loader: 'style-loader!css-loader?sourceMap',
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader?sourceMap!less-loader',
       },
       {
         test: /\.scss$/,
