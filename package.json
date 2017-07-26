@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "antd": "^2.12.1",
+    "antd": "^2.12.2",
     "autoprefixer": "^7.1.2",
     "babel": "^6.5.2",
     "babel-cli": "^6.5.1",
