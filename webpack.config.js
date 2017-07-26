@@ -107,6 +107,11 @@ module.exports = {
         test: /\.(png|jpg|jepg|gif)$/,
         loader: 'url-loader?limit=8192&name=images/[name].[ext]',
       },
+      {
+        test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
+        loader:'url-loader?name=fonts/[name].[ext]',
+        // loader: 'file?name=./static/fonts/[name].[ext]',
+      }
     ],
   },
 };
