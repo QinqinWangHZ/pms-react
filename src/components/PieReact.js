@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 // 导入echarts
 const echarts = require('echarts/lib/echarts'); // 必须
 require('echarts/lib/chart/pie'); // 图表类型
@@ -10,6 +10,7 @@ export class PieReact extends React.Component {
     super(props);
     this.setPieOption = this.setPieOption.bind(this);
     this.initPie = this.initPie.bind(this);
+    this.shouldComponentUpdate = PureRenderMixin.shouldComponentUpdate.bind(this);
   }
   componentDidMount() {
     this.initPie();
