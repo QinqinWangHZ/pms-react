@@ -10,6 +10,7 @@
   - [文档地址](http://wiki.corp.qunar.com/confluence/display/payment/1.1_20130808-CashierPay) --http://wiki.corp.qunar.com/confluence/display/payment/1.1_20130808-CashierPay
   - [视觉地址](xxx)--待定
 - #### 项目主要目录结构
+
     doc // 文档说明，比如接口说明
     mock // mock数据
     src
