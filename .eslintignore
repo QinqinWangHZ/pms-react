@@ -2,3 +2,5 @@ dist/**
 node_modules/**
 mock/**
 public/**
+webpack.config.js
+bin/**

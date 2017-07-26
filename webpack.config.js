@@ -24,7 +24,7 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.less', '.scss', '.css'],
   },
   externals: {
-    jquery: 'window.jQuery'
+    jquery: 'window.jQuery',
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -95,6 +95,10 @@ module.exports = {
         loader: 'style-loader!css-loader?sourceMap',
       },
       {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader?sourceMap!less-loader',
+      },
+      {
         test: /\.scss$/,
         // loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!sass-loader'),
         loader: 'style-loader!css-loader?sourceMap!sass-loader',
@@ -107,6 +111,11 @@ module.exports = {
         test: /\.(png|jpg|jepg|gif)$/,
         loader: 'url-loader?limit=8192&name=images/[name].[ext]',
       },
+      {
+        test: /\.(woff|woff2|svg|eot|ttf)\??.*$/,
+        loader:'url-loader?name=fonts/[name].[ext]',
+        // loader: 'file?name=./static/fonts/[name].[ext]',
+      }
     ],
   },
 };
