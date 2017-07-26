@@ -1,6 +1,6 @@
 /*eslint-disable */
 import React, {Component, PropTypes} from 'react';
-import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory } from 'react-router';
+import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory, IndexRedirect } from 'react-router';
 import Home from './containers/home.js';
 
 // 按需加载

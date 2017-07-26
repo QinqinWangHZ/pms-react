@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { Router, hashHistory } from 'react-router';
+import { Router } from 'react-router';
 import { Provider } from 'react-redux';
 
 import './stylesheet/index.scss';
@@ -12,6 +12,7 @@ import routers from './routers';
 // store设置
 import configure from './store';
 import myhistory from './history';
+
 const store = configure();
 const history = syncHistoryWithStore(myhistory, store);
 history.listen((location) => { return location; });
@@ -28,5 +29,5 @@ ReactDOM.render(
       { routers }
     </Router>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );
