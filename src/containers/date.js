@@ -1,5 +1,5 @@
 import moment from 'moment';
-import React, { Component } from 'react';
+import React from 'react';
 import { DatePicker } from 'antd';
 
 // 推荐在入口文件全局设置 locale
@@ -8,13 +8,18 @@ import { DatePicker } from 'antd';
 import 'moment/locale/ar-dz';
 
 moment.locale('ar-dz');
+const dateFormat = 'MMMM Do YY';
 
 class DateRange extends React.Component {
   render() {
     return (
       <div>
-        <br /><br />
-        <DatePicker size="default" defaultValue={moment('2015-01-01', 'YYYY-MM-DD')} />
+        <DatePicker
+          size="default"
+          defaultValue={moment('2015/01/01', dateFormat)}
+          format={dateFormat}
+          showToday={false}
+        />
       </div>
     );
   }
