@@ -31,12 +31,20 @@ const test = (location, cb) => {
     },'test')
 }
 
+// 日期
+const date = (location, cb) => {
+    require.ensure([], require => {
+      cb(null, require('./containers/date.js').default)
+    },'date')
+}
+
 const routes = (
     <Route path="/" component={Home}>
       <Route path="repos" getComponent={TestCenter}/>
       <Route path="login" getComponent={login}/>
       <Route path="PieReact" getComponent={PieReact}/>
       <Route path="test" getComponent={test}/>
+      <Route path="date" getComponent={date}/>
     </Route>
 )
 
