@@ -3,6 +3,7 @@ import React, {Component, PropTypes} from 'react';
 import { Router, Route, Redirect, IndexRoute, browserHistory, hashHistory, IndexRedirect } from 'react-router';
 import Home from './containers/home.js';
 import App from './components/App';
+import Page from './containers/Page';
 
 // 按需加载
 const TestCenter = (location, cb) => {
@@ -66,6 +67,37 @@ const routes = (
        }, 'forget')
       }}
     />
+    <Route path="page" breadcrumbName="PMS" component={Page}>
+      <IndexRedirect to="order"/>
+      <Route path="order" breadcrumbName="本地订单">
+        <IndexRedirect to="overview"/>
+        <Redirect from="overview" to="overview/1"/>
+        <Route path="overview/:page"
+               breadcrumbName="待分房"
+               getComponent={(nextState, cb) => {
+                 require.ensure([], require => {
+                   cb(null, require('./containers/OrderPage').default)
+                 }, 'mediaOverview')
+               }}
+        />
+        <Route path="edit/:id"
+               breadcrumbName="今日到店"
+               getComponent={(nextState, cb) => {
+                 require.ensure([], require => {
+                   cb(null, require('./containers/NowPage').default)
+                 }, 'mediaEdit')
+               }}
+        />Î
+        <Route path="new"
+               breadcrumbName="新建"
+               getComponent={(nextState, cb) => {
+                 require.ensure([], require => {
+                   cb(null, require('./containers/NewPage').default)
+                 }, 'mediaNew')
+               }}
+        />Î
+      </Route>
+    </Route>
     <Route path="date" getComponent={date}/>
     <Route path="repos" getComponent={TestCenter}/>
     <Route path="login" getComponent={login}/>
