@@ -1,7 +1,7 @@
+import React from 'react';
 import { Pagination, DatePicker, Modal } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-import React from 'react';
 
 moment.locale('en');
 

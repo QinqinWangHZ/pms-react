@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
 import { connect } from 'react-redux';
-import { hashHistory, Link } from 'react-router';
-import { loginFetch } from '../actions/login/login';
+import { Link } from 'react-router';
+import { loginFetch } from '../../actions/login/login';
+import hashHistory from '../../history';
 
 
 // 测试引入jquery
-$('#test').html('两只小蜜蜂');
+// $('#test').html('两只小蜜蜂');
 
 class Login extends Component {
   login() {
@@ -23,7 +24,7 @@ class Login extends Component {
     const page = this.props.params.page;
 
     dispatch(loginFetch(this.username.value, this.password.value, () => {
-      hashHistory.push(page ? page.replace(/-/g, '/') : '/');
+      hashHistory.push(page ? page.replace(/-/g, '/') : '/date');
     }));
   }
 
