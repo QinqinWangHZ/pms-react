@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { Menu, Icon } from 'antd';
-import Styles from './sliderBar.less';
+// import Styles from './sliderBar.less';
+import './sliderBar.less';
 
 const SubMenu = Menu.SubMenu;
 const MenuItem = Menu.Item;
@@ -24,7 +25,7 @@ class SlideBar extends Component {
     return (
       <Menu
         mode="inline"
-        className={Styles.menu}
+        className="menu"
         onSelect={this.selectMenu}
         openKeys={['customer', 'ad', 'data', 'financeRecord', 'account']}
         // selectedKeys={[this.props.currentSubMenu]}
@@ -63,8 +64,8 @@ class SlideBar extends Component {
 
   render() {
     return (
-      <div className={Styles.nav}>
-        <a className={Styles.logo} href='javascript:void(0)'></a>
+      <div className="nav">
+        <a className="logo" href='javascript:void(0)'></a>
         {this.renderIndexPageMenu()}
       </div>
     )

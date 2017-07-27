@@ -6,7 +6,8 @@ import 'moment/locale/zh-cn';
 
 import moment from 'moment';
 
-import Styles from './header.less';
+// import Styles from './header.less';
+import './header.less';
 
 moment.locale('zh-cn');
 
@@ -54,11 +55,11 @@ class Header extends Component {
 
   render() {
     return (
-      <Row className={Styles.header}>
+      <Row className="header">
         <Col span={16}>
           <Menu
             mode="horizontal"
-            className={Styles.menu}
+            className="menu"
             onSelect={this.selectMenu}
             selectedKeys={[this.props.currentMenu]}
           >
@@ -80,10 +81,10 @@ class Header extends Component {
           </Menu>
         </Col>
         <Col span={8}>
-          <div className={Styles.account}>
-            <span className={Styles.title}>当前账户</span>
-            <span className={Styles.logout} onClick={this.logout}>退出</span>
-            <Link className={Styles.myCenter} to="/page/accountInfo" onClick={this.selectMenu.bind(this, {"key": "myCenter"})}>个人中心</Link>
+          <div className="account">
+            <span className="title">当前账户</span>
+            <span className="logout" onClick={this.logout}>退出</span>
+            <Link className="myCenter" to="/page/accountInfo" onClick={this.selectMenu.bind(this, {"key": "myCenter"})}>个人中心</Link>
           </div>
         </Col>
       </Row>
