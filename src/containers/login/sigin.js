@@ -24,7 +24,7 @@ class Login extends Component {
     const page = this.props.params.page;
 
     dispatch(loginFetch(this.username.value, this.password.value, () => {
-      hashHistory.push(page ? page.replace(/-/g, '/') : '/date');
+      hashHistory.push(page ? page.replace(/-/g, '/') : '/page');
     }));
   }
 
