@@ -47,4 +47,5 @@
 - #### 其他说明
   - 当前项目，react版本为15.3.2
   - react-router 2.6.0
-  - react-redux 4.4.5 
+  - react-redux 4.4.5
+<!-- react-addons-test-utils -->
