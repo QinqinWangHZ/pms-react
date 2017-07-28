@@ -6,6 +6,9 @@ const HtmlwebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
+// cdn路径
+const publicPath = 'http://localhost:8080';
+
 // webpack扩展功能
 const alias = require('./bin/alias.js');
 
