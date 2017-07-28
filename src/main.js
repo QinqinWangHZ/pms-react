@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 
 import './stylesheet/index.scss';
 // 路由
-import routers from './routers2.js';
+import routers from './routers.js';
 
 
 // store设置
