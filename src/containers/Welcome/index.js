@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './style.scss';
 
-export default class App extends Component {
+export default class Welcome extends Component {
   render() {
     return (
         <div>

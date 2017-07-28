@@ -3,13 +3,11 @@ import { connect } from 'react-redux';
 
 import './style.scss';
 
-export default class Dashboard extends Component {
+export default class Order extends Component {
   render() {
     return (
         <div>
-          <div>我是header</div>
-          <div>{this.props.children}</div>
-          <div>我是footer</div>
+          我是订单页面
         </div>
     );
   }

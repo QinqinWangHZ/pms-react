@@ -6,6 +6,9 @@ const HtmlwebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
+// cdn路径
+const publicPath = 'http://localhost:8080';
+
 // webpack扩展功能
 const alias = require('./bin/alias.js');
 
@@ -37,7 +40,7 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin('common', 'js/common.[hash:8].js'),
     new OpenBrowserPlugin({
-      url: 'http://localhost:8080',
+      url: publicPath,
     }),
     new HtmlwebpackPlugin({
       filename: 'index.html',
