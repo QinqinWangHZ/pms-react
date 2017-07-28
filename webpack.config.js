@@ -40,7 +40,7 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin('common', 'js/common.[hash:8].js'),
     new OpenBrowserPlugin({
-      url: 'http://localhost:8080',
+      url: publicPath,
     }),
     new HtmlwebpackPlugin({
       filename: 'index.html',
