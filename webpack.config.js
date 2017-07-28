@@ -15,7 +15,7 @@ const alias = require('./bin/alias.js');
 module.exports = {
   entry: {
     index: path.resolve(__dirname, 'src/main.js'),
-    common: ['react', 'react-dom', 'react-router'],
+    common: ['react', 'react-dom', 'react-router','axios'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -44,6 +44,7 @@ module.exports = {
     }),
     new HtmlwebpackPlugin({
       filename: 'index.html',
+      favicon:'src/images/logo_artist.ico',
       template: path.resolve(__dirname, './index.html'),
       inject: true,
       minify: {
