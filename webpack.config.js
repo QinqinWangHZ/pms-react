@@ -15,7 +15,7 @@ const alias = require('./bin/alias.js');
 module.exports = {
   entry: {
     index: path.resolve(__dirname, 'src/main.js'),
-    common: ['react', 'react-dom', 'react-router'],
+    common: ['react', 'react-dom', 'react-router','axios'],
   },
   output: {
     path: path.resolve(__dirname, './dist'),
