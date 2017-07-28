@@ -44,6 +44,7 @@ module.exports = {
     }),
     new HtmlwebpackPlugin({
       filename: 'index.html',
+      favicon:'src/images/logo_artist.ico',
       template: path.resolve(__dirname, './index.html'),
       inject: true,
       minify: {
