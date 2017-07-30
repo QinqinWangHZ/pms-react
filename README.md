@@ -1,15 +1,4 @@
 - #### 系统名称：PMS
-
-- #### 开发人员
-  - 前端开发：王琴琴、曹西锋
-  - 服务端：纪印政、梁国荣
-  - 产品：陈超、黄梦雅、杨新华
-  - 测试：曹品琳
-  - UI： xxx
-- #### 项目地址
-  - [项目交互地址](http://f5gyge.axshare.com/#g=1&p=流程-在住订单换房) --http://f5gyge.axshare.com/#g=1&p=流程-在住订单换房
-  - [文档地址](http://wiki.corp.qunar.com/confluence/display/payment/1.1_20130808-CashierPay) --http://wiki.corp.qunar.com/confluence/display/payment/1.1_20130808-CashierPay
-  - [视觉地址](xxx)--待定
 - #### 项目主要目录结构
 
         doc // 文档说明，比如接口说明
